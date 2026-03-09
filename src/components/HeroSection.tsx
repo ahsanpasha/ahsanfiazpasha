@@ -93,7 +93,7 @@ const HeroSection = () => {
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left — Text */}
         <div className="lg:pl-12">
-          <p className={`font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-6 transition-all duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}>
+          <p className={`font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-1 transition-all duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}>
             Hey, I'm
           </p>
 
@@ -108,8 +108,8 @@ const HeroSection = () => {
           </h1>
 
           <p className={`font-body text-base text-muted-foreground max-w-md leading-relaxed mb-4 transition-all duration-700 delay-500 ${loaded ? "opacity-100" : "opacity-0"}`}>
-            Frontend Developer with 1.5+ years of experience building scalable web applications. Skilled in creating modern, user-friendly interfaces with{" "}
-            <span className="text-primary font-medium">React, Next.js, JavaScript and TypeScript</span>
+            Full Stack Developer with 1.5+ years of experience building scalable web applications. Skilled in creating modern, user-friendly interfaces and high-performance backend systems with{" "}
+            <span className="text-primary font-medium">React, Next.js, Node.js, NestJS and MongoDB</span>
             . Passionate about delivering seamless, high-quality user experiences.
           </p>
           {/* 
@@ -204,7 +204,7 @@ const HeroSection = () => {
                     <p className="pl-5">
                       <span className="text-accent">role</span>
                       <span className="text-muted-foreground">: </span>
-                      <span className="text-primary">"Frontend Developer"</span>
+                      <span className="text-primary">"Full Stack Developer"</span>
                       <span className="text-muted-foreground">,</span>
                     </p>
                     <p className="pl-5">
@@ -220,15 +220,20 @@ const HeroSection = () => {
                       <span className="text-muted-foreground">, </span>
                       <span className="text-primary">"Next.js"</span>
                       <span className="text-muted-foreground">, </span>
-                      <span className="text-primary">"TS"</span>
+                      <span className="text-primary">"Node"</span>
                       <span className="text-muted-foreground">, </span>
-                      <span className="text-primary">"JS"</span>
+                      <span className="text-primary">"Nest"</span>
+                      <span className="text-muted-foreground">, </span>
+                      <span className="text-primary">"MongoDB"</span>
+                      <span className="text-muted-foreground">, </span>
+                      <span className="text-primary">"Express"</span>
                       <span className="text-muted-foreground">],</span>
                     </p>
                     <p className="pl-5">
                       <span className="text-accent">passion</span>
                       <span className="text-muted-foreground">: </span>
-                      <span className="text-primary">"Seamless UX & Performance"</span>
+                      <span className="text-primary">"Scalable Backends & Seamless UX"</span>
+                      <span className="text-muted-foreground">,</span>
                     </p>
                     <p>
                       <span className="text-muted-foreground">{"}"}</span>

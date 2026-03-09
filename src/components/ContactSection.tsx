@@ -27,7 +27,7 @@ const ContactSection = () => {
             </p>
 
             {/* Availability badge */}
-            <div className="mt-8 inline-flex items-center gap-3 px-4 py-2.5 border border-border bg-background">
+            {/* <div className="mt-8 inline-flex items-center gap-3 px-4 py-2.5 border border-border bg-background">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
@@ -35,7 +35,7 @@ const ContactSection = () => {
               <span className="font-mono text-xs uppercase tracking-wider text-foreground">
                 Available for freelance
               </span>
-            </div>
+            </div> */}
           </div>
 
           {/* Right: Contact "card" styled like a postcard */}

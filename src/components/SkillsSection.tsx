@@ -16,7 +16,12 @@ const languages = {
 
 const frameworks = {
   "React.js":  "★★★★★",
-  "Next.js":   "★★★★☆",
+  "Next.js":   "★★★★★",
+  "Node.js":   "★★★★★",
+  "NestJS":    "★★★★★",
+  "Express":   "★★★★★",
+  "MongoDB":   "★★★★☆",
+  "PostgreSQL":"★★★★☆",
 };
 
 const stateManagement = [
@@ -53,7 +58,7 @@ export { languages, frameworks, stateManagement };`,
 .design {
   --figma:            "★★★★☆";
   --photoshop:        "★★★☆☆";
-  --coreldraw:        "★★★☆☆";
+  --coreldraw:        "★★★★★";
 }`,
   },
   {
@@ -221,7 +226,7 @@ const SkillsSection = () => {
           <div className="flex animate-[slide-marquee_25s_linear_infinite] whitespace-nowrap">
             {[...Array(2)].map((_, rep) => (
               <div key={rep} className="flex gap-8 mr-8">
-                {["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "WebSocket", "REST APIs", "Git", "Figma", "Material UI", "Ethers.js", "Web3.js", "MetaMask", "Vercel"].map((s) => (
+                {["React.js", "Next.js", "Node.js", "NestJS", "MongoDB", "Express", "TypeScript", "Tailwind CSS", "Redux", "WebSocket", "REST APIs", "Git", "Figma", "Material UI", "Ethers.js", "Web3.js", "MetaMask", "Vercel"].map((s) => (
                   <span key={`${rep}-${s}`} className="font-mono text-xs uppercase tracking-wider text-muted-foreground/60">
                     {s} <span className="text-primary mx-2">✦</span>
                   </span>

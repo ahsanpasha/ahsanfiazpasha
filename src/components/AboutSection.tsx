@@ -1,4 +1,4 @@
-import { Code2, Palette, Globe, Zap } from "lucide-react";
+import { Code2, Palette, Server, Zap } from "lucide-react";
 
 const pillars = [
   {
@@ -12,9 +12,9 @@ const pillars = [
     desc: "Translating Figma designs into flawless, responsive interfaces.",
   },
   {
-    icon: Globe,
-    title: "Web3 Native",
-    desc: "Wallet integrations, dApps, and blockchain-first experiences.",
+    icon: Server,
+    title: "Backend Core",
+    desc: "Scalable APIs, database management, and efficient server-side logic.",
   },
   {
     icon: Zap,
@@ -26,11 +26,7 @@ const pillars = [
 const AboutSection = () => {
   return (
     <section id="about" className="py-24 bg-card relative overflow-hidden">
-      <div className="absolute -right-20 top-1/2 -translate-y-1/2 -rotate-90 pointer-events-none select-none hidden lg:block">
-        <span className="font-display text-[10rem] font-black text-foreground/[0.02] whitespace-nowrap leading-none">
-          ABOUT ME
-        </span>
-      </div>
+      {/* Removed background text */}
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Centered header */}
@@ -46,16 +42,17 @@ const AboutSection = () => {
           <div className="lg:col-span-5">
             <div className="space-y-4">
               <p className="font-display text-lg text-foreground font-medium leading-relaxed">
-                I'm Ahsan — a frontend developer who believes every pixel should earn its place on screen.
+                I'm Ahsan — a Full Stack developer who engineers digital experiences from the database to the pixel.
               </p>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                With a CS degree from PMAS Arid Agriculture University and 1.5+ years in the trenches,
-                I've shipped everything from crypto wallet extensions to humanitarian donation platforms.
-                I live at the intersection of beautiful design and solid engineering.
+                With a CS degree from PMAS Arid Agriculture University and 1.5+ years of professional experience,
+                I specialize in building high-performance web applications. I bridge the gap between
+                complex server-side logic and intuitive, user-centric frontend architectures.
               </p>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                When I'm not writing React components, you'll find me exploring Web3 innovations,
-                refining my design skills in Figma, or contributing to open-source projects.
+                Whether I'm architecting scalable RESTful APIs with Node.js and NestJS or crafting
+                fluid, responsive interfaces in React, my mission remains the same: building
+                secure, high-performance systems with a relentless focus on the end-user.
               </p>
             </div>
 
@@ -84,15 +81,15 @@ const AboutSection = () => {
               ))}
             </div>
 
-            <div className="grid grid-cols-3 gap-0 border border-border">
-              <div className="p-6 text-center border-r border-border bg-background relative group overflow-hidden">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-border">
+              <div className="p-6 text-center border-b sm:border-b-0 sm:border-r border-border bg-background relative group overflow-hidden">
                 <div className="absolute inset-0 bg-primary/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                 <span className="font-display text-4xl font-black text-primary relative z-10 block">1.5+</span>
                 <span className="editorial-tag relative z-10 block mt-1">Years</span>
               </div>
-              <div className="p-6 text-center border-r border-border bg-background relative group overflow-hidden">
+              <div className="p-6 text-center border-b sm:border-b-0 sm:border-r border-border bg-background relative group overflow-hidden">
                 <div className="absolute inset-0 bg-primary/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                <span className="font-display text-4xl font-black text-primary relative z-10 block">5+</span>
+                <span className="font-display text-4xl font-black text-primary relative z-10 block">20+</span>
                 <span className="editorial-tag relative z-10 block mt-1">Projects</span>
               </div>
               <div className="p-6 text-center bg-background relative group overflow-hidden">

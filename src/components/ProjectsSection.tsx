@@ -6,7 +6,7 @@ const projects = [
     number: "01",
     title: "GAYA WALLET EXTENSION",
     description: "A secure and user-friendly multi-chain crypto wallet browser extension enabling users to manage digital assets across Ethereum and Solana networks.",
-    longDesc: "Engineered a robust, non-custodial browser extension wallet designed for seamless interoperability between Ethereum and Solana. Integrated core features like cross-chain token swaps, NFT gallery viewing, and secure direct dApp connections using Ethers.js and Web3.js. The UI was built from the ground up to ensure maximum accessibility and clarity for both novice and veteran crypto users.",
+    longDesc: "Engineered a secure, non-custodial browser extension wallet designed for seamless interoperability between Ethereum and Solana. Integrated core features like cross-chain token swaps, NFT gallery viewing, and secure direct dApp connections using Ethers.js and Web3.js. The UI was built from the ground up to ensure maximum accessibility and clarity for both novice and veteran crypto users.",
     tech: ["React", "JavaScript", "Tailwind CSS", "Ethers.js", "Web3.js"],
     github: "https://github.com/abuhuraira1234567889/snap-sharing-portal",
     link: "https://chromewebstore.google.com/detail/gaya-wallet/jafcnkgjohihjfmepbibneldbgfnhaoo",
