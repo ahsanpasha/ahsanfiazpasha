@@ -8,7 +8,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center relative overflow-hidden px-6 py-24 pt-28">
+    <section className="min-h-screen flex items-center relative overflow-hidden px-10 md:px-12 py-24 pt-28">
       {/* Grid background with fading edges */}
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: `
@@ -70,29 +70,29 @@ const HeroSection = () => {
 
       {/* L-shaped corner brackets — thin & elegant */}
       {/* Top-left */}
-      <div className="absolute top-14 left-6 md:left-12 pointer-events-none">
+      <div className="absolute top-20 left-4 md:top-14 md:left-12 pointer-events-none">
         <div className="w-10 h-[1px] bg-primary/40" />
         <div className="w-[1px] h-10 bg-primary/40" />
       </div>
       {/* Top-right */}
-      <div className="absolute top-14 right-6 md:right-12 pointer-events-none flex flex-col items-end">
+      <div className="absolute top-20 right-4 md:top-14 md:right-12 pointer-events-none flex flex-col items-end">
         <div className="w-10 h-[1px] bg-primary/40" />
         <div className="w-[1px] h-10 bg-primary/40 ml-auto" />
       </div>
       {/* Bottom-left */}
-      <div className="absolute bottom-8 left-6 md:left-12 pointer-events-none">
+      <div className="absolute bottom-16 left-4 md:bottom-8 md:left-12 pointer-events-none">
         <div className="w-[1px] h-10 bg-primary/40" />
         <div className="w-10 h-[1px] bg-primary/40" />
       </div>
       {/* Bottom-right */}
-      <div className="absolute bottom-8 right-6 md:right-12 pointer-events-none flex flex-col items-end">
+      <div className="absolute bottom-16 right-4 md:bottom-8 md:right-12 pointer-events-none flex flex-col items-end">
         <div className="w-[1px] h-10 bg-primary/40 ml-auto" />
         <div className="w-10 h-[1px] bg-primary/40" />
       </div>
 
-      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="w-full max-w-[78rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left — Text */}
-        <div className="lg:pl-12">
+        <div>
           <p className={`font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-1 transition-all duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}>
             Hey, I'm
           </p>
