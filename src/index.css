@@ -104,12 +104,23 @@
     @apply border-border;
   }
 
+  html,
+  body {
+    @apply overflow-x-hidden w-full;
+    -webkit-overflow-scrolling: touch;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
   }
 }
@@ -127,6 +138,7 @@
   .hover-lift {
     @apply transition-all duration-300;
   }
+
   .hover-lift:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-editorial);
@@ -137,19 +149,39 @@
   }
 
   @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
   }
 
   @keyframes draw-line {
-    from { stroke-dashoffset: 200; }
-    to { stroke-dashoffset: 0; }
+    from {
+      stroke-dashoffset: 200;
+    }
+
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 
   @keyframes scrollDown {
-    0% { transform: translateY(-12px); }
-    50% { transform: translateY(20px); }
-    100% { transform: translateY(-12px); }
+    0% {
+      transform: translateY(-12px);
+    }
+
+    50% {
+      transform: translateY(20px);
+    }
+
+    100% {
+      transform: translateY(-12px);
+    }
   }
 
   .accent-dot::before {
@@ -162,9 +194,11 @@
   .font-display {
     font-family: var(--font-display);
   }
+
   .font-body {
     font-family: var(--font-body);
   }
+
   .font-mono {
     font-family: var(--font-mono);
   }

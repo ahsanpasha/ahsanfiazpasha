@@ -151,7 +151,7 @@ const SkillsSection = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12">
           <span className="editorial-tag">Chapter 04</span>
