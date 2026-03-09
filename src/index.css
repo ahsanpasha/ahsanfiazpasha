@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 96%;
+    --foreground: 20 10% 12%;
+
+    --card: 40 30% 93%;
+    --card-foreground: 20 10% 12%;
+
+    --popover: 40 33% 96%;
+    --popover-foreground: 20 10% 12%;
+
+    --primary: 12 76% 56%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 40 20% 88%;
+    --secondary-foreground: 20 10% 20%;
+
+    --muted: 35 20% 90%;
+    --muted-foreground: 20 8% 45%;
+
+    --accent: 175 40% 40%;
+    --accent-foreground: 40 33% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 82%;
+    --input: 30 15% 82%;
+    --ring: 12 76% 56%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 40 30% 93%;
+    --sidebar-foreground: 20 10% 12%;
+    --sidebar-primary: 12 76% 56%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 40 20% 88%;
+    --sidebar-accent-foreground: 20 10% 20%;
+    --sidebar-border: 30 15% 82%;
+    --sidebar-ring: 12 76% 56%;
+
+    /* Custom tokens */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --gradient-warm: linear-gradient(135deg, hsl(12 76% 56%), hsl(35 90% 60%));
+    --gradient-subtle: linear-gradient(180deg, hsl(40 33% 96%), hsl(40 30% 93%));
+    --shadow-editorial: 0 2px 40px -12px hsl(20 10% 12% / 0.15);
+    --shadow-card: 0 1px 20px -8px hsl(20 10% 12% / 0.1);
+  }
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 40 20% 92%;
+
+    --card: 220 15% 11%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 220 15% 8%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 12 76% 56%;
+    --primary-foreground: 220 15% 8%;
+
+    --secondary: 220 12% 16%;
+    --secondary-foreground: 40 20% 85%;
+
+    --muted: 220 12% 16%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 175 40% 45%;
+    --accent-foreground: 220 15% 8%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 40 20% 92%;
+
+    --border: 220 12% 18%;
+    --input: 220 12% 18%;
+    --ring: 12 76% 56%;
+
+    --sidebar-background: 220 15% 10%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 12 76% 56%;
+    --sidebar-primary-foreground: 220 15% 8%;
+    --sidebar-accent: 220 12% 16%;
+    --sidebar-accent-foreground: 40 20% 85%;
+    --sidebar-border: 220 12% 18%;
+    --sidebar-ring: 12 76% 56%;
+
+    --gradient-warm: linear-gradient(135deg, hsl(12 76% 56%), hsl(35 90% 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 15% 8%), hsl(220 15% 11%));
+    --shadow-editorial: 0 2px 40px -12px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 1px 20px -8px hsl(0 0% 0% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .editorial-divider {
+    @apply w-full border-t border-foreground/20;
+  }
+
+  .editorial-tag {
+    font-family: var(--font-mono);
+    @apply text-xs uppercase tracking-[0.2em] text-muted-foreground;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-editorial);
+  }
+
+  .marquee-text {
+    @apply text-[8rem] md:text-[12rem] font-display font-black leading-none tracking-tighter text-foreground/[0.03] select-none whitespace-nowrap;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  @keyframes draw-line {
+    from { stroke-dashoffset: 200; }
+    to { stroke-dashoffset: 0; }
+  }
+
+  @keyframes scrollDown {
+    0% { transform: translateY(-12px); }
+    50% { transform: translateY(20px); }
+    100% { transform: translateY(-12px); }
+  }
+
+  .accent-dot::before {
+    content: '';
+    @apply inline-block w-2 h-2 rounded-full bg-primary mr-3;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
