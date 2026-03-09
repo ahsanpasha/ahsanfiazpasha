@@ -113,7 +113,7 @@ const ContactSection = () => {
             {/* Bottom: decorative postmark */}
             <div className="border-t border-border p-4 flex items-center justify-center">
               <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/50">
-                Islamabad, Pakistan · {new Date().getFullYear()}
+                Islamabad, Pakistan
               </span>
             </div>
           </div>
