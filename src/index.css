@@ -106,14 +106,27 @@
 
   html,
   body {
-    @apply overflow-x-clip w-full max-w-full;
+    overflow-x: hidden;
+    width: 100%;
     -webkit-overflow-scrolling: touch;
-    position: relative;
+    overscroll-behavior-x: none;
+  }
+
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
   }
 
   body {
-    @apply bg-background text-foreground overflow-x-clip;
+    @apply bg-background text-foreground;
     font-family: var(--font-body);
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   h1,
