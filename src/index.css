@@ -106,12 +106,13 @@
 
   html,
   body {
-    @apply overflow-x-hidden w-full;
+    @apply overflow-x-clip w-full max-w-full;
     -webkit-overflow-scrolling: touch;
+    position: relative;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-clip;
     font-family: var(--font-body);
   }
 
