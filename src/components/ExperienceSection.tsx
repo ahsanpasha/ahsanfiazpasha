@@ -37,7 +37,7 @@ const ExperienceSection = () => {
   const [educationOpen, setEducationOpen] = useState(false);
 
   return (
-    <section id="experience" className="py-24">
+    <section id="experience" className="py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
           <span className="editorial-tag">Chapter 02</span>
