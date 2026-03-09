@@ -77,6 +77,7 @@ const AboutSection = () => {
                     <h3 className="font-display text-base font-semibold text-foreground mb-1">{p.title}</h3>
                     <p className="font-body text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
                   </div>
+                  {/* about.tsx */}
                 </div>
               ))}
             </div>

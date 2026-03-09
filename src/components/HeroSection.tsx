@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ArrowRight, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowRight, MapPin, Circle } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const HeroSection = () => {
@@ -159,28 +159,32 @@ const HeroSection = () => {
         {/* Right — Visual card */}
         <div className={`transition-all duration-1000 delay-500 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div className="relative">
-
-
-            <div className="relative border border-border bg-card overflow-hidden">
-              {/* Terminal header bar */}
-              <div className="flex items-center gap-2 px-4 py-2.5 bg-foreground/[0.03] border-b border-border">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-destructive/60" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-primary/50" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-accent/50" />
+            <div className="w-full mx-auto border border-border rounded-lg overflow-hidden shadow-[0_8px_40px_-12px_hsl(var(--foreground)/0.15)] bg-background group">
+              {/* Title bar */}
+              <div className="flex items-center gap-2 px-4 py-3 bg-foreground/[0.04] border-b border-border">
+                <div className="flex gap-1.5">
+                  <Circle size={10} className="fill-[hsl(0,70%,60%)] text-[hsl(0,70%,60%)]" />
+                  <Circle size={10} className="fill-[hsl(45,80%,55%)] text-[hsl(45,80%,55%)]" />
+                  <Circle size={10} className="fill-[hsl(140,50%,50%)] text-[hsl(140,50%,50%)]" />
                 </div>
-                <div className="flex-1 flex justify-center">
-                  <span className="font-mono text-[10px] text-muted-foreground/40 bg-foreground/[0.03] px-8 py-0.5 rounded-sm">about.tsx</span>
-                </div>
-                <div className="w-[52px]" />
+                <span className="font-mono text-[10px] text-muted-foreground ml-2 opacity-50">ahsanfiazpasha</span>
               </div>
 
-              {/* Line numbers + code */}
-              <div className="p-5 font-mono text-[12px] leading-[1.8]">
+              {/* File tabs */}
+              <div className="flex border-b border-border bg-foreground/[0.02]">
+                <div className="px-4 py-2.5 font-mono text-xs border-r border-border bg-background text-foreground relative">
+                  <span className="absolute top-0 left-0 right-0 h-0.5 bg-primary" />
+                  <span className="text-muted-foreground/50 mr-1">📄</span>
+                  about.tsx
+                </div>
+              </div>
+
+              {/* Code Area */}
+              <div className="p-5 font-mono text-[12px] leading-[1.8] bg-background">
                 <div className="flex">
                   {/* Line numbers */}
                   <div className="select-none pr-5 text-muted-foreground/20 text-right" style={{ minWidth: "2rem" }}>
-                    {Array.from({ length: 12 }, (_, i) => (
+                    {Array.from({ length: 14 }, (_, i) => (
                       <div key={i}>{i + 1}</div>
                     ))}
                   </div>
@@ -220,13 +224,11 @@ const HeroSection = () => {
                       <span className="text-muted-foreground">, </span>
                       <span className="text-primary">"Next.js"</span>
                       <span className="text-muted-foreground">, </span>
-                      <span className="text-primary">"Node"</span>
+                      <span className="text-primary">"Node.js"</span>
                       <span className="text-muted-foreground">, </span>
-                      <span className="text-primary">"Nest"</span>
+                      <span className="text-primary">"NestJS"</span>
                       <span className="text-muted-foreground">, </span>
                       <span className="text-primary">"MongoDB"</span>
-                      <span className="text-muted-foreground">, </span>
-                      <span className="text-primary">"Express"</span>
                       <span className="text-muted-foreground">],</span>
                     </p>
                     <p className="pl-5">
@@ -254,17 +256,17 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Status bar */}
-              <div className="flex items-center justify-between px-4 py-1.5 bg-foreground/[0.03] border-t border-border text-[9px] font-mono text-muted-foreground/30">
+              {/* Status Bar */}
+              <div className="flex items-center justify-between px-4 py-1.5 bg-foreground/[0.04] border-t border-border text-[9px] font-mono text-muted-foreground/40">
                 <div className="flex items-center gap-3">
                   <span className="flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent/60" />
-                    TypeScript React
+                    TypeScript
                   </span>
                   <span>UTF-8</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span>Ln 12, Col 28</span>
+                  <span>Ln 14, Col 28</span>
                   <span>Spaces: 2</span>
                 </div>
               </div>
