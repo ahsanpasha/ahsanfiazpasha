@@ -8,7 +8,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center relative overflow-hidden px-10 md:px-12 py-24 pt-28">
+    <section className="min-h-screen flex items-center relative overflow-hidden px-10 md:px-12 py-24 pt-16 md:pt-28">
       {/* Grid background with fading edges */}
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: `
@@ -70,12 +70,12 @@ const HeroSection = () => {
 
       {/* L-shaped corner brackets — thin & elegant */}
       {/* Top-left */}
-      <div className="absolute top-20 left-4 md:top-14 md:left-12 pointer-events-none">
+      <div className="absolute top-8 left-4 md:top-14 md:left-12 pointer-events-none">
         <div className="w-10 h-[1px] bg-primary/40" />
         <div className="w-[1px] h-10 bg-primary/40" />
       </div>
       {/* Top-right */}
-      <div className="absolute top-20 right-4 md:top-14 md:right-12 pointer-events-none flex flex-col items-end">
+      <div className="absolute top-8 right-4 md:top-14 md:right-12 pointer-events-none flex flex-col items-end">
         <div className="w-10 h-[1px] bg-primary/40" />
         <div className="w-[1px] h-10 bg-primary/40 ml-auto" />
       </div>
