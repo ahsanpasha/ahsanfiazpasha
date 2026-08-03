@@ -5,6 +5,7 @@ import {
   ArrowRight,
   MapPin,
   Circle,
+  Download,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -175,16 +176,21 @@ const HeroSection = () => {
               />
             </a>
             <a
-              href="#contact"
-              className="px-5 py-2.5 border border-border text-foreground font-mono text-[11px] uppercase tracking-[0.15em] hover:border-primary hover:text-primary transition-all duration-300"
+              href="/pdf/Ahsan_Resume.pdf"
+              download="Ahsan_Resume.pdf"
+              className="group inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground font-mono text-[11px] uppercase tracking-[0.15em] hover:border-primary hover:text-primary transition-all duration-300"
             >
-              Get in Touch
+              Download Resume
+              <Download
+                size={13}
+                className="group-hover:-translate-y-0.5 transition-transform"
+              />
             </a>
           </div>
 
           {/* Socials */}
           <div
-            className={`flex items-center gap-3 mt-8 transition-all duration-700 delay-[800ms] ${loaded ? "opacity-100" : "opacity-0"}`}
+            className={`flex items-center gap-3 mt-8 transition-all duration-700 transition-delay-[800ms] ${loaded ? "opacity-100" : "opacity-0"}`}
           >
             {[
               {
