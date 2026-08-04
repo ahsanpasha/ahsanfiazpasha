@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden w-full relative">
+    <div className="min-h-screen overflow-x-hidden w-full relative">
       <BackgroundEffects />
       <Navbar />
       <main className="w-full overflow-x-hidden">

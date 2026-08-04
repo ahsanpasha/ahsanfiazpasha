@@ -1,45 +1,96 @@
-import { useEffect, useState } from 'react';
-
+/**
+ * BackgroundEffects — Fullscreen fixed wavy grid
+ * Rendered as an actual inline SVG so it always shows.
+ */
 const BackgroundEffects = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
-    <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden bg-background">
-      {/* Animated Aurora Blobs */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-primary/20 blur-[120px] mix-blend-screen animate-blob" />
-      <div className="absolute top-[20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-accent/20 blur-[130px] mix-blend-screen animate-blob animation-delay-2000" />
-      <div className="absolute bottom-[-20%] left-[20%] w-[70vw] h-[70vw] rounded-full bg-primary/10 blur-[120px] mix-blend-screen animate-blob animation-delay-4000" />
-
-      {/* Grid Pattern overlay with low opacity */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_30%,#000_70%,transparent_100%)]" />
-
-      {/* Noise Texture */}
-      <div 
-        className="absolute inset-0 opacity-[0.025] dark:opacity-[0.04] mix-blend-overlay" 
-        style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }}
+    <>
+      {/* Base background color layer */}
+      <div
+        className="fixed inset-0 -z-20"
+        style={{ backgroundColor: "hsl(var(--background))" }}
       />
-      
-      {/* Mouse Spotlight */}
-      <div 
-        className="absolute w-[800px] h-[800px] rounded-full blur-[100px] pointer-events-none transition-transform duration-150 ease-out opacity-40 dark:opacity-20 mix-blend-screen"
-        style={{
-          background: 'radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, transparent 60%)',
-          transform: `translate(${mousePosition.x - 400}px, ${mousePosition.y - 400}px)`,
-        }}
-      />
-    </div>
+
+      {/* Wavy grid SVG — always on top of base color, behind all content */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <svg
+          width="100%"
+          height="100%"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ position: "absolute", inset: 0 }}
+        >
+          <defs>
+            <pattern
+              id="wavy-grid"
+              x="0"
+              y="0"
+              width="80"
+              height="80"
+              patternUnits="userSpaceOnUse"
+            >
+              {/* Horizontal wavy lines */}
+              <path
+                d="M0 20 C20 14, 40 26, 80 20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.8"
+              />
+              <path
+                d="M0 40 C20 34, 40 46, 80 40"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.8"
+              />
+              <path
+                d="M0 60 C20 54, 40 66, 80 60"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.8"
+              />
+              {/* Vertical wavy lines */}
+              <path
+                d="M20 0 C14 20, 26 40, 20 80"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.8"
+              />
+              <path
+                d="M40 0 C34 20, 46 40, 40 80"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.8"
+              />
+              <path
+                d="M60 0 C54 20, 66 40, 60 80"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.8"
+              />
+            </pattern>
+
+            {/* Radial fade mask — grid visible in center, fades to edges */}
+            <radialGradient id="fade-mask" cx="50%" cy="40%" r="70%">
+              <stop offset="0%" stopColor="white" stopOpacity="1" />
+              <stop offset="60%" stopColor="white" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="white" stopOpacity="0" />
+            </radialGradient>
+            <mask id="grid-mask">
+              <rect width="100%" height="100%" fill="url(#fade-mask)" />
+            </mask>
+          </defs>
+
+          {/* The actual grid rect */}
+          <rect
+            width="100%"
+            height="100%"
+            fill="url(#wavy-grid)"
+            mask="url(#grid-mask)"
+            className="text-foreground"
+            style={{ opacity: 0.05 }}
+          />
+        </svg>
+      </div>
+    </>
   );
 };
 

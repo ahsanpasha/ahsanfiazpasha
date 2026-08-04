@@ -16,7 +16,7 @@ interface Project {
 const projects: Project[] = [
   {
     number: "01",
-    title: "GAYA WALLET EXTENSION",
+    title: "GAYA WALLET",
     description: "A secure and user-friendly multi-chain crypto wallet browser extension enabling users to manage digital assets across Ethereum and Solana networks.",
     longDesc: "Engineered a secure, non-custodial browser extension wallet designed for seamless interoperability between Ethereum and Solana. Integrated core features like cross-chain token swaps, NFT gallery viewing, and secure direct dApp connections using Ethers.js and Web3.js.",
     tech: ["React", "JavaScript", "Tailwind CSS", "Ethers.js", "Web3.js"],
@@ -220,8 +220,8 @@ const ProjectsSection = () => {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`font-mono text-[11px] uppercase tracking-[0.2em] px-5 py-2.5 border transition-all duration-300 snap-center whitespace-nowrap flex-shrink-0 ${activeCategory === cat
-                  ? "bg-primary border-primary text-primary-foreground shadow-lg shadow-primary/20"
-                  : "bg-transparent border-border text-muted-foreground hover:border-primary/50 hover:text-foreground"
+                ? "bg-primary border-primary text-primary-foreground shadow-lg shadow-primary/20"
+                : "bg-transparent border-border text-muted-foreground hover:border-primary/50 hover:text-foreground"
                 }`}
             >
               {cat}
