@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import BackgroundEffects from "@/components/BackgroundEffects";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ExperienceSection from "@/components/ExperienceSection";
@@ -11,6 +12,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden w-full relative">
+      <BackgroundEffects />
       <Navbar />
       <main className="w-full overflow-x-hidden">
         <HeroSection />

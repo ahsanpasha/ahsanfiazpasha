@@ -17,58 +17,6 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center relative overflow-hidden px-10 md:px-12 py-24 pt-16 md:pt-28">
-      {/* Grid background with fading edges */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `
-          linear-gradient(hsl(var(--foreground) / 0.035) 1px, transparent 1px),
-          linear-gradient(90deg, hsl(var(--foreground) / 0.035) 1px, transparent 1px)
-        `,
-          backgroundSize: "50px 50px",
-          maskImage:
-            "radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 80%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 80%)",
-        }}
-      />
-      {/* Accent grid highlight — primary colored intersections */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `
-          radial-gradient(hsl(var(--primary) / 0.12) 1.5px, transparent 1.5px)
-        `,
-          backgroundSize: "50px 50px",
-          maskImage:
-            "radial-gradient(ellipse 50% 45% at 50% 50%, black 20%, transparent 70%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 50% 45% at 50% 50%, black 20%, transparent 70%)",
-        }}
-      />
-
-      {/* Soft gradient blobs */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 45% 40% at 15% 45%, hsl(var(--primary) / 0.06) 0%, transparent 100%)",
-        }}
-      />
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 35% 30% at 80% 30%, hsl(var(--accent) / 0.04) 0%, transparent 100%)",
-        }}
-      />
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 30% 25% at 60% 80%, hsl(var(--primary) / 0.03) 0%, transparent 100%)",
-        }}
-      />
 
       {/* Floating particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
