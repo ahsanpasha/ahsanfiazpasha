@@ -18,10 +18,10 @@ const ContactSection = () => {
           {/* Left: Big typographic CTA */}
           <div className="overflow-hidden">
             <motion.div
-              initial={{ opacity: 0, y: 100, rotate: 1 }}
-              whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+              initial={{ opacity: 0, y: 120, filter: "blur(10px)", rotate: 2 }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", rotate: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
             >
               <h2 className="font-display text-5xl md:text-7xl font-bold mt-4 text-foreground leading-[0.95]">
                 Have a project
@@ -48,11 +48,12 @@ const ContactSection = () => {
 
           {/* Right: Contact "card" styled like a postcard */}
           <motion.div 
-            initial={{ opacity: 0, x: 50, rotate: -2 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+            initial={{ opacity: 0, x: 50, rotateY: 20, rotateX: 10, rotateZ: -2, filter: "blur(10px)", scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, rotateY: 0, rotateX: 0, rotateZ: 0, filter: "blur(0px)", scale: 1 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="border border-border bg-background p-0 relative"
+            transition={{ duration: 1.2, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
+            style={{ transformStyle: "preserve-3d", perspective: 1000 }}
+            className="border border-border bg-background p-0 relative shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-transform duration-500"
           >
             {/* Header area */}
             <div className="border-b border-border p-5 flex items-center justify-between">

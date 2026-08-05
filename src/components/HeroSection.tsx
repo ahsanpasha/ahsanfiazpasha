@@ -3,21 +3,28 @@ import {
   Linkedin,
   Mail,
   ArrowRight,
-  MapPin,
   Circle,
   Download,
 } from "lucide-react";
 import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 40, rotate: 2, scale: 0.95 },
+const maskVariants = {
+  hidden: { y: "120%", rotate: 4 },
+  visible: { 
+    y: 0, 
+    rotate: 0, 
+    transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] } // Highly dramatic Webflow-style mask reveal
+  }
+};
+
+const fadeBlurVariants = {
+  hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
   visible: { 
     opacity: 1, 
     y: 0, 
-    rotate: 0, 
-    scale: 1, 
-    transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } 
+    filter: "blur(0px)",
+    transition: { duration: 1, ease: "easeOut" } 
   }
 };
 
@@ -242,25 +249,29 @@ const HeroSection = () => {
           }}
         >
           <motion.p
-            variants={itemVariants}
+            variants={fadeBlurVariants}
             className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-2"
           >
             Hey, I'm
           </motion.p>
 
-          <motion.h1 variants={itemVariants} className="font-display font-black leading-[0.9] tracking-tight mb-5">
-            <span className="block text-4xl sm:text-5xl md:text-7xl">
-              <span className="text-primary drop-shadow-[0_0_15px_hsl(12_76%_56%/0.2)]">Ahsan</span>{" "}
-              <span className="text-foreground">Fiaz</span>
-            </span>
-            <span className="block text-4xl sm:text-5xl md:text-7xl text-foreground mt-1">
-              Pasha
-            </span>
-          </motion.h1>
+          <h1 className="font-display font-black leading-[0.9] tracking-tight mb-6 mt-1 flex flex-col gap-1">
+            <div className="overflow-hidden pb-1">
+              <motion.span variants={maskVariants} className="block text-4xl sm:text-5xl md:text-7xl">
+                <span className="text-primary drop-shadow-[0_0_15px_hsl(12_76%_56%/0.2)]">Ahsan</span>{" "}
+                <span className="text-foreground">Fiaz</span>
+              </motion.span>
+            </div>
+            <div className="overflow-hidden pb-2">
+              <motion.span variants={maskVariants} className="block text-4xl sm:text-5xl md:text-7xl text-foreground">
+                Pasha
+              </motion.span>
+            </div>
+          </h1>
 
           <motion.p
-            variants={itemVariants}
-            className="font-body text-base md:text-lg text-muted-foreground max-w-md leading-relaxed mb-6"
+            variants={fadeBlurVariants}
+            className="font-body text-base md:text-lg text-muted-foreground max-w-md leading-relaxed mb-6 mt-4"
           >
             Full Stack Developer with 1.5+ years of experience building scalable
             web applications. Skilled in creating modern, user-friendly
@@ -273,7 +284,7 @@ const HeroSection = () => {
 
           {/* Actions */}
           <motion.div
-            variants={itemVariants}
+            variants={fadeBlurVariants}
             className="flex items-center gap-4 flex-wrap"
           >
             <a
@@ -301,7 +312,7 @@ const HeroSection = () => {
 
           {/* Socials */}
           <motion.div
-            variants={itemVariants}
+            variants={fadeBlurVariants}
             className="flex items-center gap-3 mt-10"
           >
             {[
@@ -339,9 +350,10 @@ const HeroSection = () => {
 
         {/* Right — Visual card */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, rotate: -2, y: 50 }}
-          animate={loaded ? { opacity: 1, scale: 1, rotate: 0, y: 0 } : {}}
-          transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, rotateY: -35, rotateX: 15, scale: 0.8, z: -300 }}
+          animate={loaded ? { opacity: 1, rotateY: 0, rotateX: 0, scale: 1, z: 0 } : {}}
+          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+          style={{ transformStyle: "preserve-3d", perspective: 1200 }}
           className="relative"
         >
           <div className="absolute -inset-1 bg-gradient-to-tr from-primary/10 via-primary/5 to-transparent blur-2xl rounded-full" />

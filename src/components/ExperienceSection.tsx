@@ -59,10 +59,10 @@ const ExperienceSection = () => {
             return (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 80, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                initial={{ opacity: 0, x: isLeft ? -100 : 100, filter: "blur(8px)", scale: 0.95 }}
+                whileInView={{ opacity: 1, x: 0, filter: "blur(0px)", scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ type: "spring", stiffness: 60, damping: 14, delay: i * 0.15 }}
                 className={`relative flex flex-col md:flex-row items-start mb-12 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
               >
@@ -148,7 +148,13 @@ const ExperienceSection = () => {
           })}
 
           {/* Education at the end of timeline */}
-          <div className="relative flex flex-col md:flex-row items-start">
+          <motion.div 
+            initial={{ opacity: 0, x: 100, filter: "blur(8px)", scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)", scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ type: "spring", stiffness: 60, damping: 14, delay: 0.3 }}
+            className="relative flex flex-col md:flex-row items-start"
+          >
             <div className="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-accent border-2 border-background -translate-x-1.5 mt-8 z-10" />
             <div className="hidden md:block md:w-1/2" />
             <div className="ml-14 md:ml-0 md:pr-12 md:w-1/2 cursor-pointer" onClick={() => setEducationOpen(!educationOpen)}>
@@ -188,7 +194,7 @@ const ExperienceSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

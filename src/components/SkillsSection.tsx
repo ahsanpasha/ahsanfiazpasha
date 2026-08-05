@@ -156,10 +156,10 @@ const SkillsSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12 overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, y: 80, rotate: 1 }}
-            whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+            initial={{ opacity: 0, y: 100, filter: "blur(10px)", rotate: 2 }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", rotate: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
           >
             <span className="editorial-tag">Chapter 04</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 text-foreground">
@@ -173,10 +173,11 @@ const SkillsSection = () => {
 
         {/* Code editor window */}
         <motion.div 
-          initial={{ opacity: 0, y: 60, scale: 0.98 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          initial={{ opacity: 0, y: 100, rotateX: -15, scale: 0.9, z: -100 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1, z: 0 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.4, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
+          style={{ transformStyle: "preserve-3d", perspective: 1200 }}
           className="w-full mx-auto border border-border rounded-lg overflow-hidden shadow-[0_8px_40px_-12px_hsl(20_10%_12%/0.15)]"
         >
           {/* Title bar */}

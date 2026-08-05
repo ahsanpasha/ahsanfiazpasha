@@ -33,10 +33,10 @@ const AboutSection = () => {
         {/* Left-aligned header */}
         <div className="mb-16 overflow-hidden">
           <motion.div 
-            initial={{ opacity: 0, y: 80, rotate: 1 }}
-            whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+            initial={{ opacity: 0, y: 100, filter: "blur(10px)", rotate: 2 }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", rotate: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
           >
             <span className="editorial-tag">Chapter 01</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 text-foreground">
@@ -52,10 +52,10 @@ const AboutSection = () => {
               <div className="overflow-hidden">
                 <motion.p 
                   className="font-display text-lg text-foreground font-medium leading-relaxed"
-                  initial={{ opacity: 0, y: 60 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 1, delay: 0.1, ease: [0.76, 0, 0.24, 1] }}
                 >
                   I'm Ahsan — a Full Stack developer who engineers digital experiences from the database to the pixel.
                 </motion.p>
@@ -63,10 +63,10 @@ const AboutSection = () => {
               <div className="overflow-hidden">
                 <motion.p 
                   className="font-body text-sm text-muted-foreground leading-relaxed"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 1, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
                 >
                   With a CS degree from PMAS Arid Agriculture University and 1.5+ years of professional experience,
                   I specialize in building high-performance web applications. I bridge the gap between
@@ -76,10 +76,10 @@ const AboutSection = () => {
               <div className="overflow-hidden">
                 <motion.p 
                   className="font-body text-sm text-muted-foreground leading-relaxed"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 1, delay: 0.3, ease: [0.76, 0, 0.24, 1] }}
                 >
                   Whether I'm architecting scalable RESTful APIs with Node.js and NestJS or crafting
                   fluid, responsive interfaces in React, my mission remains the same: building
@@ -95,10 +95,11 @@ const AboutSection = () => {
               {pillars.map((p, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  initial={{ opacity: 0, y: 60, rotateY: -20, rotateX: 10, scale: 0.9, z: -100 }}
+                  whileInView={{ opacity: 1, y: 0, rotateY: 0, rotateX: 0, scale: 1, z: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.7, delay: 0.2 + (i * 0.1), ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 1.2, delay: 0.1 + (i * 0.1), ease: [0.76, 0, 0.24, 1] }}
+                  style={{ transformStyle: "preserve-3d", perspective: 1000 }}
                   className="group border border-border bg-background p-6 relative overflow-hidden hover-lift cursor-default"
                 >
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -115,7 +116,13 @@ const AboutSection = () => {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-border">
+            <motion.div 
+              initial={{ opacity: 0, y: 60, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1.2, delay: 0.4, ease: [0.76, 0, 0.24, 1] }}
+              className="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-border"
+            >
               <div className="p-6 text-center border-b sm:border-b-0 sm:border-r border-border bg-background relative group overflow-hidden">
                 <div className="absolute inset-0 bg-primary/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                 <span className="font-display text-4xl font-black text-primary relative z-10 block">1.5+</span>
@@ -131,7 +138,7 @@ const AboutSection = () => {
                 <span className="font-display text-4xl font-black text-primary relative z-10 block">∞</span>
                 <span className="editorial-tag relative z-10 block mt-1">Curiosity</span>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

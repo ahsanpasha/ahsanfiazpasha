@@ -207,10 +207,10 @@ const ProjectsSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16 overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, y: 80, rotate: 1 }}
-            whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+            initial={{ opacity: 0, y: 100, filter: "blur(10px)", rotate: 2 }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", rotate: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
           >
             <span className="editorial-tag">Chapter 03 — Portfolio</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 text-foreground">
@@ -246,10 +246,10 @@ const ProjectsSection = () => {
           {filteredProjects.map((project, idx) => (
             <motion.article
               key={project.number}
-              initial={{ opacity: 0, y: 60, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, clipPath: "inset(100% 0 0 0)", y: 60 }}
+              whileInView={{ opacity: 1, clipPath: "inset(0% 0 0 0)", y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: (idx % 3) * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1.2, delay: (idx % 3) * 0.15, ease: [0.76, 0, 0.24, 1] }}
               className="group relative bg-card border border-border hover:border-primary/40 transition-all duration-500 flex flex-col overflow-hidden w-[85vw] sm:w-[60vw] md:w-auto snap-center shrink-0 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.05)]"
             >
               {/* Background large number */}
