@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Circle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const tabs = [
   {
@@ -153,18 +154,31 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-12">
-          <span className="editorial-tag">Chapter 04</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 text-foreground">
-            Skills & Toolkit
-          </h2>
-          <p className="font-body text-muted-foreground mt-3 text-sm max-w-md">
-            Best viewed in a code editor — because that's where I live.
-          </p>
+        <div className="mb-12 overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 80, rotate: 1 }}
+            whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <span className="editorial-tag">Chapter 04</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 text-foreground">
+              Skills & Toolkit
+            </h2>
+            <p className="font-body text-muted-foreground mt-3 text-sm max-w-md">
+              Best viewed in a code editor — because that's where I live.
+            </p>
+          </motion.div>
         </div>
 
         {/* Code editor window */}
-        <div className="w-full mx-auto border border-border rounded-lg overflow-hidden shadow-[0_8px_40px_-12px_hsl(20_10%_12%/0.15)]">
+        <motion.div 
+          initial={{ opacity: 0, y: 60, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full mx-auto border border-border rounded-lg overflow-hidden shadow-[0_8px_40px_-12px_hsl(20_10%_12%/0.15)]"
+        >
           {/* Title bar */}
           <div className="flex items-center gap-2 px-4 py-3 bg-foreground/[0.04] border-b border-border">
             <div className="flex gap-1.5">
@@ -219,7 +233,7 @@ const SkillsSection = () => {
               <span className="font-mono text-[9px] text-primary">● Ahsan's Config</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Scrolling ticker */}
         <div className="mt-12 overflow-hidden border-y border-border py-4">

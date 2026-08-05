@@ -1,5 +1,6 @@
 import { ArrowUpRight, Github, Linkedin, Mail, Phone, Copy, Check } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const ContactSection = () => {
   const [copied, setCopied] = useState<string | null>(null);
@@ -15,16 +16,24 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Big typographic CTA */}
-          <div>
-            <h2 className="font-display text-5xl md:text-7xl font-bold mt-4 text-foreground leading-[0.95]">
-              Have a project
-              <br />
-              in <span className="text-primary italic">mind</span>?
-            </h2>
-            <p className="font-body text-muted-foreground mt-6 max-w-md leading-relaxed">
-              I'm always excited to collaborate on innovative projects. Whether it's a blockchain dApp,
-              a sleek landing page, or a complex web application — let's build something remarkable together.
-            </p>
+          <div className="overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0, y: 100, rotate: 1 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <h2 className="font-display text-5xl md:text-7xl font-bold mt-4 text-foreground leading-[0.95]">
+                Have a project
+                <br />
+                in <span className="text-primary italic">mind</span>?
+              </h2>
+              <p className="font-body text-muted-foreground mt-6 max-w-md leading-relaxed">
+                I'm always excited to collaborate on innovative projects. Whether it's a blockchain dApp,
+                a sleek landing page, or a complex web application — let's build something remarkable together.
+              </p>
+            </motion.div>
+          </div>
 
             {/* Availability badge */}
             {/* <div className="mt-8 inline-flex items-center gap-3 px-4 py-2.5 border border-border bg-background">
@@ -36,10 +45,15 @@ const ContactSection = () => {
                 Available for freelance
               </span>
             </div> */}
-          </div>
 
           {/* Right: Contact "card" styled like a postcard */}
-          <div className="border border-border bg-background p-0 relative">
+          <motion.div 
+            initial={{ opacity: 0, x: 50, rotate: -2 }}
+            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="border border-border bg-background p-0 relative"
+          >
             {/* Header area */}
             <div className="border-b border-border p-5 flex items-center justify-between">
               <span className="editorial-tag">Contact</span>
@@ -116,7 +130,7 @@ const ContactSection = () => {
                 Islamabad, Pakistan
               </span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

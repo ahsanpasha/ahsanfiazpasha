@@ -1,5 +1,6 @@
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 interface Project {
   number: string;
@@ -23,7 +24,7 @@ const projects: Project[] = [
     github: "https://github.com/abuhuraira1234567889/snap-sharing-portal",
     link: "https://chromewebstore.google.com/detail/gaya-wallet/jafcnkgjohihjfmepbibneldbgfnhaoo",
     category: "Web3",
-    image: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=crypto%20wallet%20browser%20extension%20interface%20with%20ethereum%20and%20solana%20tokens%20modern%20dark%20UI%20with%20gold%20accents&image_size=landscape_16_9",
+    image: "/Images/01.jpg",
   },
   {
     number: "02",
@@ -34,7 +35,7 @@ const projects: Project[] = [
     github: "https://github.com/blockmob/Investor-evox",
     link: "https://investor-evox.vercel.app/",
     category: "Real Estate Web3",
-    image: "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=modern%20real%20estate%20investment%20platform%20dashboard%20with%20skyscraper%20buildings%20and%20blockchain%20tokens%20luxury%20aesthetic&image_size=landscape_16_9",
+    image: "/Images/01.jpg",
   },
   {
     number: "03",
@@ -204,14 +205,21 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 bg-card">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-16">
-          <span className="editorial-tag">Chapter 03 — Portfolio</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 text-foreground">
-            Featured Projects
-          </h2>
-          <p className="font-body text-muted-foreground max-w-2xl text-lg leading-relaxed mt-4">
-            A curated collection of work spanning Web3, FinTech, AI, and beyond — each crafted with precision and purpose.
-          </p>
+        <div className="mb-16 overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 80, rotate: 1 }}
+            whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <span className="editorial-tag">Chapter 03 — Portfolio</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 text-foreground">
+              Featured Projects
+            </h2>
+            <p className="font-body text-muted-foreground max-w-2xl text-lg leading-relaxed mt-4">
+              A curated collection of work spanning Web3, FinTech, AI, and beyond — each crafted with precision and purpose.
+            </p>
+          </motion.div>
         </div>
 
         <div className="flex overflow-x-auto snap-x md:flex-wrap gap-3 mb-12 pb-2">
@@ -236,10 +244,13 @@ const ProjectsSection = () => {
 
         <div className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 pb-8 md:pb-0 pr-[5vw] md:pr-0">
           {filteredProjects.map((project, idx) => (
-            <article
+            <motion.article
               key={project.number}
+              initial={{ opacity: 0, y: 60, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: (idx % 3) * 0.15, ease: [0.16, 1, 0.3, 1] }}
               className="group relative bg-card border border-border hover:border-primary/40 transition-all duration-500 flex flex-col overflow-hidden w-[85vw] sm:w-[60vw] md:w-auto snap-center shrink-0 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.05)]"
-              style={{ animationDelay: `${idx * 80}ms` }}
             >
               {/* Background large number */}
               <div className="absolute -bottom-8 -right-4 font-display text-[12rem] font-bold text-foreground/5 pointer-events-none group-hover:text-primary/10 transition-colors duration-700 select-none z-0 leading-none">
@@ -258,11 +269,7 @@ const ProjectsSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
 
-                <div className="absolute top-3 left-3 flex gap-2">
-                  <span className="font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 bg-primary text-primary-foreground backdrop-blur-md shadow-sm">
-                    {project.category}
-                  </span>
-                </div>
+
 
                 <div className="absolute bottom-3 right-3 flex gap-2 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
                   {project.link && (
@@ -341,7 +348,7 @@ const ProjectsSection = () => {
               </div>
 
               <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary group-hover:w-full transition-all duration-700 ease-out z-20" />
-            </article>
+            </motion.article>
           ))}
         </div>
 

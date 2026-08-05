@@ -1,4 +1,5 @@
 import { Code2, Palette, Server, Zap } from "lucide-react";
+import { motion } from "framer-motion";
 
 const pillars = [
   {
@@ -29,42 +30,75 @@ const AboutSection = () => {
       {/* Removed background text */}
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Centered header */}
-        <div className="text-center mb-16">
-          <span className="editorial-tag">Chapter 01</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 text-foreground">
-            Crafting the <span className="text-primary italic">web's</span> future
-          </h2>
+        {/* Left-aligned header */}
+        <div className="mb-16 overflow-hidden">
+          <motion.div 
+            initial={{ opacity: 0, y: 80, rotate: 1 }}
+            whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <span className="editorial-tag">Chapter 01</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 text-foreground">
+              Crafting the <span className="text-primary italic">web's</span> future
+            </h2>
+          </motion.div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Left: Intro */}
           <div className="lg:col-span-5">
             <div className="space-y-4">
-              <p className="font-display text-lg text-foreground font-medium leading-relaxed">
-                I'm Ahsan — a Full Stack developer who engineers digital experiences from the database to the pixel.
-              </p>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                With a CS degree from PMAS Arid Agriculture University and 1.5+ years of professional experience,
-                I specialize in building high-performance web applications. I bridge the gap between
-                complex server-side logic and intuitive, user-centric frontend architectures.
-              </p>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                Whether I'm architecting scalable RESTful APIs with Node.js and NestJS or crafting
-                fluid, responsive interfaces in React, my mission remains the same: building
-                secure, high-performance systems with a relentless focus on the end-user.
-              </p>
+              <div className="overflow-hidden">
+                <motion.p 
+                  className="font-display text-lg text-foreground font-medium leading-relaxed"
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  I'm Ahsan — a Full Stack developer who engineers digital experiences from the database to the pixel.
+                </motion.p>
+              </div>
+              <div className="overflow-hidden">
+                <motion.p 
+                  className="font-body text-sm text-muted-foreground leading-relaxed"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  With a CS degree from PMAS Arid Agriculture University and 1.5+ years of professional experience,
+                  I specialize in building high-performance web applications. I bridge the gap between
+                  complex server-side logic and intuitive, user-centric frontend architectures.
+                </motion.p>
+              </div>
+              <div className="overflow-hidden">
+                <motion.p 
+                  className="font-body text-sm text-muted-foreground leading-relaxed"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  Whether I'm architecting scalable RESTful APIs with Node.js and NestJS or crafting
+                  fluid, responsive interfaces in React, my mission remains the same: building
+                  secure, high-performance systems with a relentless focus on the end-user.
+                </motion.p>
+              </div>
             </div>
-
-
           </div>
 
           {/* Right: Cards + stats */}
           <div className="lg:col-span-7">
             <div className="grid grid-cols-2 gap-4 mb-8">
               {pillars.map((p, i) => (
-                <div
+                <motion.div
                   key={i}
+                  initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.7, delay: 0.2 + (i * 0.1), ease: [0.16, 1, 0.3, 1] }}
                   className="group border border-border bg-background p-6 relative overflow-hidden hover-lift cursor-default"
                 >
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -77,8 +111,7 @@ const AboutSection = () => {
                     <h3 className="font-display text-base font-semibold text-foreground mb-1">{p.title}</h3>
                     <p className="font-body text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
                   </div>
-                  {/* about.tsx */}
-                </div>
+                </motion.div>
               ))}
             </div>
 
